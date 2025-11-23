@@ -45,11 +45,26 @@ html
       <li>Translation App</li>
     </ul>
 
+    <h2>JS Interaction</h2>
+    <button id="JSButton">Click Me!</button>
+    <p id="JSMessage"></p>
+
     <h2>Simple Calculator</h2>
     <ul>
       <li><a href="https://github.com/haziqhakim9899-gif/practice" target="_blank">Simple Calculator</a></li>
     </ul>
     
   </body>
+  <script>
+    //Select button and paragraph
+    const button = document.getElementById('JSButton');
+    const message = document.getElementById('JSMessage');
+    //Add Click Event
+    button.addEventListener('click', () => {
+      message.textContent = "You clicked the button! Welcome back to coding!";
+      message.style.color = "#e67e22";
+      message.style.font = "bold";
+    });
+  </script>
   
 </html>
