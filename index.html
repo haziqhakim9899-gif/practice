@@ -26,7 +26,17 @@ html
       }
       li{
         margin-bottom : 5px;
-      }  
+      }
+      //Smooth fade in
+      #JSGreetMessage {
+        margin-top : 10px;
+        font-size : 1.2em;
+        opacity : 0;
+        transition : opacity 0.5s ease-in-out;
+      }
+        .showMessage(
+        opacity : 1 ;
+      }
     </style>
   </head>
   <body>
@@ -82,6 +92,11 @@ html
       greetmessage.textContent = 'Hello, ${name}!Welcome back to coding again!';
       //greetmessage.style.color = "#e67e22";
       //greetmessage.style.fontWeight = "bold";
+
+  // Add fade-in effect
+  greetmessage.classList.remove("showMessage");
+  void greetmessage.offsetWidth; // forces reflow so animation can restart
+  greetmessage.classList.add("showMessage");
 
     //Animate and making text colour changes
       let i = 0;
