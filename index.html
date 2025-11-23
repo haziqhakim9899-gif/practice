@@ -74,12 +74,25 @@ html
     const greetbutton = document.getElementById('JSGreet');
     const greetmessage = document.getElementById('JSGreetMessage');
     const greetname = document.getElementById('JSName');
-    //Add Click Event
+    //Declaring the available colors for the text
+    const colors = ["#e67e22", "#3498db", "#2ecc71", "#9b59b6", "#e74c3c"];
+    //Add Click Event for Greeting function
     greetbutton.addEventListener('click', () => {
       const name = greetname.value || "Stranger";
       greetmessage.textContent = 'Hello, ${name}!Welcome back to coding again!';
-      greetmessage.style.color = "#e67e22";
+      //greetmessage.style.color = "#e67e22";
+      //greetmessage.style.fontWeight = "bold";
+
+    //Animate and making text colour changes
+      let i = 0;
+      const interval = setInterval(() => {
+        greetmessage.style.color = colors[i];
+        i++;
+        if(i >= colors.length) clearInterval(interval);
+      },200); // Changes every 200ms
+
       greetmessage.style.fontWeight = "bold";
+      
     //Clear input and focus on Next Name
       greetname.value = "";
       greetname.focus();
